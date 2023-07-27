@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Start Webcam</title>
+</head>
+
+<body>
+  <h1>Start Webcam</h1>
+  <video id="video" width="640" height="480" autoplay></video>
+
+  <script>
+    const constraints = { video: true };
+    const video = document.getElementById('video');
+
+    function startWebcam() {
+      navigator.mediaDevices.getUserMedia(constraints)
+        .then((stream) => {
+          video.srcObject = stream;
+        })
+        .catch((err) => {
+          console.error('Error accessing webcam:', err);
+        });
+    }
+
+    startWebcam();
+  </script>
+</body>
+
+</html>
