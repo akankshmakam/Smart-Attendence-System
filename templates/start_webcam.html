@@ -5,9 +5,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Start Webcam</title>
+  <style>
+
+    body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+header {
+  background-color: #007BFF;
+  padding: 20px;
+  color: #fff;
+}
+
+
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+}
+  </style>
 </head>
 
 <body>
+<header>
+    <nav>
+      <a href="{{ url_for('index')}}">Home</a>
+      <a href="{{ url_for('register')}}">Register</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
   <h1>Start Webcam</h1>
   <video id="video" width="640" height="480" autoplay></video>
 
